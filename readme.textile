@@ -1,0 +1,18 @@
+h1. YearList 2.0
+
+The Year Listing plugin is a simple way to get a distinct 4 digit year for your entries. This way you can list out years for archives.
+
+
+<pre>
+{exp:yearlist channel="yourchannel" category="1"}
+
+{year}
+
+{/exp:yearlist}
+</pre>     
+
+That will return an array of years. Use {year} to print them to the screen and wrap in any markup needed. There are currently no linebreaks or HTML associated with this plugin.
+
+The category parameter is optional and if you leave it out, the plugin will search across all categories.    
+
+This plugin requires ExpressionEngine 2.0.
