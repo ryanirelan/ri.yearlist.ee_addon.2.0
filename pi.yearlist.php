@@ -4,7 +4,7 @@
 	Year List
 	for EllisLab ExpressionEngine - by Ryan Irelan	
 ----------------------------------------------------------------
-	Copyright (c) 2008 Airbag Industries, LLC
+	Copyright (c) 2009
 ================================================================
 	THIS IS COPYRIGHTED SOFTWARE. PLEASE
 	READ THE LICENSE AGREEMENT.
@@ -26,7 +26,7 @@
 ----------------------------------------------------------------
 	Compatibility:	EE 2.0
 ----------------------------------------------------------------
-	Created:		2008-04-03
+	Created:		2009-04-03
 ================================================================
 */
 
@@ -38,7 +38,7 @@ $plugin_info = array(
                  'pi_name'          => 'Year List',
                  'pi_version'       => '2.0',
                  'pi_author'        => 'Ryan Irelan',
-                 'pi_author_url'    => 'http://airbagindustries.com',
+                 'pi_author_url'    => 'http://eeinsider.com',
                  'pi_description'   => 'Returns list of years in which there are entries',
                  'pi_usage'         => Yearlist::usage()
                );
