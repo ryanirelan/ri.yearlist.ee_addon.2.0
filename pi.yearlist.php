@@ -4,7 +4,7 @@
 	Year List
 	for EllisLab ExpressionEngine - by Ryan Irelan	
 ----------------------------------------------------------------
-	Copyright (c) 2009
+	Copyright (c) 2009 Mijingo, LLC
 ================================================================
 	THIS IS COPYRIGHTED SOFTWARE. PLEASE
 	READ THE LICENSE AGREEMENT.
@@ -36,7 +36,7 @@
 
 $plugin_info = array(
                  'pi_name'          => 'Year List',
-                 'pi_version'       => '2.0',
+                 'pi_version'       => '2.0.1',
                  'pi_author'        => 'Ryan Irelan',
                  'pi_author_url'    => 'http://eeinsider.com',
                  'pi_description'   => 'Returns list of years in which there are entries',
