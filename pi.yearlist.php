@@ -77,6 +77,10 @@ class Yearlist
 		if ($this->EE->TMPL->fetch_param('category') !=false)
 		{
 			$category = $this->EE->TMPL->fetch_param('category');
+		}
+		else
+		{
+			$category='all';
 		}                                              
 		
 		// ---------------------------
@@ -165,7 +169,7 @@ The Year Listing plugin is a simple way to get a distinct 4 digit year for your 
 
 That will return an array of years. Use {year} to print them to the screen and wrap in any markup needed. There are currently no linebreaks or HTML associated with this plugin.
 
-The category parameter is optional and if you leave it out, the plugin will search across all categories.
+The category parameter is optional and if you leave it out, the plugin will search across all categories. There is currently no support for having multiple categories in the category parameter (e.g. category="3|8|10"). This may come later.
 
 <?php
 		$buffer = ob_get_contents();
