@@ -36,7 +36,7 @@
 
 $plugin_info = array(
                  'pi_name'          => 'Year List',
-                 'pi_version'       => '2.0.1',
+                 'pi_version'       => '2.0.2',
                  'pi_author'        => 'Ryan Irelan',
                  'pi_author_url'    => 'http://eeinsider.com',
                  'pi_description'   => 'Returns list of years in which there are entries',
@@ -80,7 +80,7 @@ class Yearlist
 		}
 		else
 		{
-			$category='all';
+			$category = 'all';
 		}                                              
 		
 		// ---------------------------
