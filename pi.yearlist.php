@@ -20,13 +20,14 @@
 ================================================================
 	File:			pi.yearlist.php
 ----------------------------------------------------------------
-	Version:		2.0
+	Version:		2.1
 ----------------------------------------------------------------
 	Purpose:	  Returns list of years in which there are entries
 ----------------------------------------------------------------
-	Compatibility:	EE 2.0
+	Compatibility:	EE 2.0, MSM
 ----------------------------------------------------------------
 	Created:		2009-04-03
+	Updated:		2012-07-19 (cherrypj)
 ================================================================
 */
 
@@ -36,7 +37,7 @@
 
 $plugin_info = array(
                  'pi_name'          => 'Year List',
-                 'pi_version'       => '2.0.2',
+                 'pi_version'       => '2.1',
                  'pi_author'        => 'Ryan Irelan',
                  'pi_author_url'    => 'http://eeinsider.com',
                  'pi_description'   => 'Returns list of years in which there are entries',
@@ -51,8 +52,9 @@ class Yearlist
 {
     var $return_data;
     var $category;
-	  var $channel;
-	
+    var $channel;
+    var $site_id;
+
     // -------------------------------
     // Constructor
     // -------------------------------
@@ -84,10 +86,22 @@ class Yearlist
 		}                                              
 		
 		// ---------------------------
+		// get the site_id parameter
+		// ---------------------------
+		if ($this->EE->TMPL->fetch_param('site') !=false)
+		{
+			$site_id = $this->EE->TMPL->fetch_param('site');
+		}
+		else
+		{
+			$site_id = 1;
+		}                                              
+		
+		// ---------------------------
 		// Query the database
 		// ---------------------------
 		$query = $this->EE->db->select('channel_id');
-		$query = $this->EE->db->get_where('exp_channels', array('channel_name' => $channel));
+		$query = $this->EE->db->get_where('exp_channels', array('channel_name' => $channel, 'site_id' => $site_id));
 		
 		// ----------------------------
 		// Is this a real channel name?
@@ -108,7 +122,8 @@ class Yearlist
 		
 		if ($category == 'all')
 		{
-			$this->EE->db->select('year')->distinct()->from('exp_channel_titles')->where('channel_id', $channel)->order_by('year', 'desc');			
+			$wheres = array('channel_id' => $channel, 'site_id' => $site_id);
+			$this->EE->db->select('year')->distinct()->from('exp_channel_titles')->where($wheres)->order_by('year', 'desc');			
 		}
 		else
 		{
@@ -117,7 +132,7 @@ class Yearlist
 			// we need to query for only entries that are in that
 			// category
 			// ---------------------------------------------------                               
-			$wheres = array('exp_channel_titles.channel_id' => $channel, 'exp_category_posts.cat_id' => $category);
+			$wheres = array('exp_channel_titles.channel_id' => $channel, 'exp_category_posts.cat_id' => $category, 'exp_channel_titles.site_id' => $site_id);
 			
 			$this->EE->db->select('exp_channel_titles.year')->distinct()->from('exp_channel_titles')->join('exp_category_posts', 'exp_channel_titles.entry_id = exp_category_posts.entry_id', 'inner')->where($wheres)->order_by('year', 'desc');
 		}
