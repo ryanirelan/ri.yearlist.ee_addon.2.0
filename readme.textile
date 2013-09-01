@@ -8,7 +8,7 @@ Now, MSM-compatible!
 <pre>
 {exp:yearlist channel="yourchannel" category="1" site="1"}
 
-{year}
+{years}
 
 {/exp:yearlist}
 </pre>     
