@@ -155,7 +155,7 @@ class Yearlist
 				
 				foreach ($this->EE->TMPL->var_single as $key => $val)
 				{
-					if ($key == 'year')
+					if ($key == 'years')
 					{
 						$tagdata = $this->EE->TMPL->swap_var_single($key, $row->year, $tagdata);
 					}
