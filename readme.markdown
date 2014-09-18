@@ -13,4 +13,4 @@ That will return an array of years. Use {years} (plural, to avoid a variable con
 
 The category parameter is optional, and if you leave it out, the plugin will search across all categories. The site parameter is optional, and if you leave it out, the plugin will search the default site.
 
-This plugin requires ExpressionEngine 2.0.
+This plugin requires ExpressionEngine 2+.
