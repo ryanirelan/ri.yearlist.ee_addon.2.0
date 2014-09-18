@@ -178,7 +178,7 @@ The Year Listing plugin is a simple way to get a distinct 4 digit year for your 
 
 {exp:yearlist channel="yourchannel" category="1"}
 
-{year}
+{years}
 
 {/exp:yearlist}
 
