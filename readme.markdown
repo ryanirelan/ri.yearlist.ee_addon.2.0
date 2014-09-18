@@ -1,10 +1,7 @@
 # YearList 2.1
 ## Get a four digit year for your entries.
 
-The Year Listing plugin is a simple way to get a distinct 4 digit year for your entries. This way you can list out years for archives.
-
-
-
+The YearList plugin is a simple way to get a distinct 4 digit year for your entries. This way you can list out years for archives.
 
 	{exp:yearlist channel="yourchannel" category="1" site="1"}
 
