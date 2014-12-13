@@ -39,7 +39,7 @@ $plugin_info = array(
                  'pi_name'          => 'Year List',
                  'pi_version'       => '2.1',
                  'pi_author'        => 'Ryan Irelan',
-                 'pi_author_url'    => 'http://eeinsider.com',
+                 'pi_author_url'    => 'http://mijingo.com',
                  'pi_description'   => 'Returns list of years in which there are entries',
                  'pi_usage'         => Yearlist::usage()
                );
